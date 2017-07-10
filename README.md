@@ -595,7 +595,7 @@ type | 说明
 ```
 
 可以根据时间的范围查询（timeRange）这个时间范围内完成绑定的所有用户信息，也可以根据索引查询（index）指定平台用户名在谷米财富的用户信息
-查询谷米财富用户信息接口地址：http://open.api.谷米财富.cn/query
+查询谷米财富用户信息接口地址：http://open.api.gumilicai.cn/query
 请求的Method 为 `POST` 参数为
 `data=谷米财富&nonce=xxxx&signature=xxxx&timestamp=12345643&appId=xxxx`
 
