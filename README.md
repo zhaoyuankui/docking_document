@@ -609,7 +609,7 @@ type | 说明
 
 ```json
 {
-  "username": "string, 谷米财富用户名(可选)",
+  "username": "string, 谷米财富用户名(可选)",
   "platformUserNo":"string 谷米财富平台用户编号",
   "telephone": "string, 手机",
   "email": "string, 电子邮箱",
