@@ -291,7 +291,7 @@ code | message
   "username": "string, 谷米财富用户名(可选)",
   "usernamep": "string, 合作平台用户名",
   "salt": "string, 用于鉴权校验,该账户的8位长度密钥",
-  "bid": "string, 标的ID，跳转到标的购买页，home为首页，account为个人中心,recharge为充值,withdrawals为提现",
+ "bid": "string, 标的ID，跳转到标的购买页，home为首页，account为个人中心,recharge为充值,withdrawals为提现",
   "type": "登录类型，0:PC，1:WAP"
 }
 ```
