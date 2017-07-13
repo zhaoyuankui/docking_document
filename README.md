@@ -508,7 +508,7 @@ period | 说明
 	  "bid": "string, 标的ID",
 	  "burl": "string, 标的url",
 	  "username": "string, 合作平台用户名",
-	   "platformUserNo":"string 谷米财富平台用户编号",
+	  "platformUserNo":"string 谷米财富平台用户编号",
 	  "amount": "float, 投资金额",
 	  "actualAmount": "float, 实际投资金额",
 	  "income": "float, 预期投资收益",
