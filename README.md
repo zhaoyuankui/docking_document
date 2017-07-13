@@ -223,7 +223,8 @@ code | message
 
 ```json
 {
-  "username": "string, 谷米财富用户名",
+  "username": "string, 谷米财富用户名(可选)",
+  "platformUserNo":"string 谷米财富平台用户编号",
   "telephone": "string, 手机",
   "email": "string, 电子邮箱(可选)",
   "idCard": {
@@ -255,7 +256,8 @@ code | message
 ### Request
 ```json
 {
-  "username": "string, required, 谷米财富用户名",
+  "username": "string, required, 谷米财富用户名(可选)",
+   "platformUserNo":"string 谷米财富平台用户编号",
   "usernamep": "string, required, 平台用户名",
   "registerAt": "datetime, required, 平台注册时间",
   "bindAt": "datetime, required, 绑定谷米财富时间",
@@ -286,10 +288,10 @@ code | message
 
 ```json
 {
-  "username": "string, 谷米财富用户名",
+  "username": "string, 谷米财富用户名(可选)",
   "usernamep": "string, 合作平台用户名",
   "salt": "string, 用于鉴权校验,该账户的8位长度密钥",
-  "bid": "string, 标的ID，跳转到标的购买页，home为首页，account为个人中心",
+  "bid": "string, 标的ID，跳转到标的购买页，home为首页，account为个人中心,recharge为充值,withdrawals为提现",
   "type": "登录类型，0:PC，1:WAP"
 }
 ```
