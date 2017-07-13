@@ -165,9 +165,9 @@ Signature | 签名
 
 ```json
 {
-  "username": "string, 谷米财富用户名",
-  "platformUserNo":"string 谷米财富平台用户编号"，
-  "telephone": "string, 手机",
+  "username": "string, 谷米财富用户名(可选)",
+  "platformUserNo":"string 谷米财富平台用户编号",
+  "telephone":"string, 手机",
   "email": "string, 电子邮箱(可选)",
   "idCard": {
     "number": "string, 身份证号码",
@@ -188,9 +188,9 @@ Signature | 签名
 
 ```json
 {
-  "username": "string, required, 谷米财富用户名",
-  "platformUserNo":"string 谷米财富平台用户编号"，
-  "usernamep": "string, required, 平台用户名",
+  "username": "string, required, 谷米财富用户名(可选)",
+  "platformUserNo":"string 谷米财富平台用户编号",
+  "usernamep":"string, required, 平台用户名",
   "registerAt": "datetime, required, 平台注册时间",
   "bindAt": "datetime, required, 绑定谷米财富时间",
   "bindType": "enum, required, 0:表示谷米财富带来的新用户",
@@ -199,9 +199,7 @@ Signature | 签名
 }
 ```
 
-- 如果谷米财富用户编号重复创建，同样视为成功，返回对应的绑定信息。
-- 新注册的用户如果在平台未发现重复用户名，则默认为tzj+手机号。
-- 如果平台用户名usernamep是可以做修改的，则回传的usernamep改成tzj+入库的绑定关系主键id,确保唯一性。
+- 如果谷米财富平台用户编号重复创建，同样视为成功，返回对应的绑定信息。
 
 ### Errors
 
@@ -210,7 +208,7 @@ code | message
 1001 | 手机号已占用
 1002 | 邮箱已占用
 1003 | 身份证已占用
-1004 | 用户名已占用
+1004 | 平台用户编号
 
 
 ## 3.2 关联老账户
