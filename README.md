@@ -322,9 +322,9 @@ code | message
 		"endTime": "结束时间"
 	},
 	"index": {
-		"name": "这里只会根据谷米财富用户名查询，固定为username",
+		"name": "这里只会根据谷米财富平台用户编号查询，固定为platformUserNo",
 		"salt": "string, 用于鉴权校验,该账户的8位长度密钥",
-		"vals": "username数组，查询匹配的用户信息"
+		"vals": "platformUserNo数组，查询匹配的用户信息"
 	}
 }
 ```
@@ -335,7 +335,8 @@ code | message
 ```json
 [
 	{
-	  "username": "string, required, 谷米财富用户名",
+	  "username": "string, required, 谷米财富用户名(可选)",
+	   "platformUserNo":"string 谷米财富平台用户编号",
 	  "usernamep": "string, required, 平台用户名",
 	  "registerAt": "datetime, required, 平台注册时间",
 	  "bindAt": "datetime, required, 绑定谷米财富时间",
@@ -413,7 +414,7 @@ type | 说明
 	  "borrowAmount": "float, 借款金额",
 	  "remainAmount": "float, 剩余金额",
 	  "minInvestAmount": "float, 起投金额",
-	  "period": "string, 借款期限, 1d, 1m，如果为活期该字段为0",
+	  "period": "string, 借款期限, 1 天 2月，如果为活期该字段为0",
 	  "originalRate": "float, 原始年化利率，13.5表示13.5%",
 	  "rewardRate": "float, 奖励利率，13.5表示13.5%",
 	  "status": "enum, 标的状态，见标的状态表格",
@@ -435,13 +436,13 @@ type | 说明
 
 type | 说明
 --- | ---
-0 | 普通标（固定期限，如10天，15天，1个月）
-1 | 转让标
-2 | 净值标
-10 | 活期 
-101 | 新手标（新手标也是一个普通的固定期限标，仅限新手投资）
-102 | 体验金标
-1000 | 其他（如：秒还标）
+1 | 普通标
+2 | 转让标
+3 | 净值标
+4 | 新手标
+5 | 体验金标
+6 | 活期
+7 | 其他（如：秒还标）
 
 #### 标的状态
 
@@ -458,6 +459,14 @@ status | 说明
 8 | 等待放款
 9 | 等待开始
 99 | 其他
+
+#### 期限类型
+
+period | 说明
+--- | ---
+0 | 活期
+1 | 天标
+2 | 月标
 
 
 ## 3.6 投资记录查询
