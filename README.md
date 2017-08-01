@@ -661,3 +661,4 @@ type| name | 说明
 1002 | EMAIL_HAVE_USED 		   | 邮箱号已占用
 1003 | IDCARD_HAVE_USED 	   | 身份证号已占用
 1004 | USERNAME_HAVE_USED 	 ? | 平台用户编号已占用
+1005 | JSON_MAPPING_EXCEPTION 	 ? | JSON映射异常
