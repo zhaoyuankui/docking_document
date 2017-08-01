@@ -249,7 +249,7 @@ code | message
 用户授权绑定成功后平台需同步回调谷米财富的接口URL.
 
 	线上地址：http://open.gumilicai.com/callback
-	测试地址：http://open.gumilicai.com/test/callback
+	测试地址：http://test.gumilicai.com/open/callback
 
 此时请求的URL 所需参数为：
 ### Service
