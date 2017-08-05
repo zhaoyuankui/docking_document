@@ -343,7 +343,8 @@ code | message
 	  "bindAt": "datetime, required, 绑定谷米财富时间",
 	  "bindType": "enum, 0:表示谷米财富带来的新用户，1:表示平台已有用户",
 	  "assets": {
-		  "awaitAmount": "float, 待收金额",
+		  "awaitAmountCapital": "float, 待收本金",
+		  "awaitAmountInterest": "float, 待收利息",
 		  "currentAmount": "float, 活期金额",
 		  "frozenAmount": "float, 冻结金额",
 		  "balanceAmount": "float, optional, 账户余额",
