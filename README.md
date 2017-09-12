@@ -416,7 +416,7 @@ type | 说明
 	  "borrowAmount": "float, 借款金额",
 	  "remainAmount": "float, 剩余金额",
 	  "minInvestAmount": "float, 起投金额",
-	  "period": "string, 借款期限类型, 1 天 2月，如果为活期该字段为0",
+	  "period": "string, 借款期限类型, 1 天 2月，3年 如果为活期该字段为0",
 	  "deadline":"string, 借款期限",
 	  "originalRate": "float, 原始年化利率，13.5表示13.5%",
 	  "rewardRate": "float, 奖励利率，13.5表示13.5%",
