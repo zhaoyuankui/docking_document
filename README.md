@@ -79,6 +79,7 @@ signature | string | Yes | 对data的签名，如果data为空，该字段也为
 
 - 字符编码使用`UTF-8`
 - 协议中所有时间参数（如`registerAt`, `investAt`等等）格式均为`2006-01-02 15:04:05`
+- 如果某字段无值请填写null
 
 ## 2.3 数据安全
 
