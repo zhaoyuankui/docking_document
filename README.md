@@ -517,7 +517,7 @@ period | 说明
 	  "actualAmount": "float, 实际投资金额",
 	  "income": "float, 预期投资收益",
 	  "investAt": "datetime, 投资时间",
-	  "status": "enum, 投资状态(0:还款中, 1:已还清)(非必传项)",
+	  "status": "enum, 投资状态(0:还款中, 1:已还清,2:投资中)(非必传项)",
 	  "trans_state": "enum, 0未转让 1表示转让",
 	  "trans_time": "datetime 转让时间 默认为空，已转让：格式2014-09-01 19:30:12精确到秒",
 	  "end_time": "datetime 交易结束时间(投资到期时间)格式2014-09-01",
