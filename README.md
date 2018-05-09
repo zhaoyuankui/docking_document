@@ -592,7 +592,7 @@ type | 说明
 
 ### Service
 
-`service=queryTzjUser`
+`service=queryGmUser`
 
 ### Request
 
