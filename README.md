@@ -149,7 +149,7 @@ Signature = SHA1(sort(EncryptData, Token, Timestamp, Nonce));
 EncryptData | 加密后的数据
 Token | 谷米财富分配给平台的Token
 Timestamp | 时间戳，对应2.2中的timestamp
-Nonce | 随机字符串，对应2.2中的timestamp
+Nonce | 随机字符串，对应2.2中的nonce
 Signature | 签名
 
 # 3. 接口描述
@@ -529,113 +529,6 @@ period | 说明
 ```
 
 tips: 从移动端投资用`wap`标识，Andoird客户端用`android` iOS客户端用`ios`标识，其他用`pc`标识，自动购买用`auto_buy`标识
-
-## 3.7 回款记录查询
-
-### Service
-
-`service=queryRepays`
-
-### Request
-
-```json
-{
-	"timeRange": {
-		"startTime": "开始时间",
-		"endTime": "结束时间"
-	},
-	"index": {
-		"name": "id OR bid OR platformUserNo",
-		"salt": "string, 用于鉴权校验,该账户的8位长度密钥(以platformUserNo查询时才有该字段)",
-		"vals": "array，见下面的说明"
-	}
-}
-```
-
-可以根据时间的范围查询（timeRange）这个时间范围内发生的所有回款记录，也可以根据索引进行如下查询
-
-- id查询（field="id"），查询指定回款ID的回款记录，一个id对应一条回款记录
-- bid查询（field="bid"），查询指定标的ID对应的回款记录，一个标的ID对应一条或者多条（比如：分多期回款的）回款记录
-- platformUserNo（field="platformUserNo"），查询指定用户的一段时间范围内的回款记录，**必须有timeRange参数**
-
-### Response
-
-```json
-[
-	{
-		"id": "string, 回款ID，全局唯一",
-		"investId": "string，投资ID",
-		"bid": "string，标的ID",
-		"username": "string, 合作平台用户名",
-		"platformUserNo":"string 谷米财富平台用户编号",
-		"amount": "float, 回款金额(本金)",
-		"income": "float, 回款收益(不包含管理费)",
-		"repayAt": "datetime, 回款时间",
-		"type": "enum，回款类型，见回款类型表格",
-		"tags": "array, 标签"
-	}
-]
-```
-
-#### 回款类型
-
-type | 说明
---- | ---
-0 | 普通回款，因标的正常到期收到回款
-1 | 转让回款，因用户主动债权转让收到回款
-
-
-
-## 3.8 谷米财富用户信息查询
-
-平台通过该接口获取到跟谷米财富绑定的用户信息
-
-### Service
-
-`service=queryGmUser`
-
-### Request
-
-```json
-{
-	"timeRange": {
-		"startTime": "开始时间",
-		"endTime": "结束时间"
-	},
-	"index": {
-		"name": "这里只会根据平台用户名查询，固定为usernamep",
-		"vals": "username数组，查询匹配的用户信息"
-	}
-}
-```
-
-可以根据时间的范围查询（timeRange）这个时间范围内完成绑定的所有用户信息，也可以根据索引查询（index）指定平台用户名在谷米财富的用户信息
-查询谷米财富用户信息接口地址：http://open.api.gumilicai.cn/query
-请求的Method 为 `POST` 参数为
-`data=谷米财富&nonce=xxxx&signature=xxxx&timestamp=12345643&appId=xxxx`
-
-### Response
-
-```json
-{
-  "username": "string, 谷米财富用户名(可选)",
-  "platformUserNo":"string 谷米财富平台用户编号",
-  "telephone": "string, 手机",
-  "email": "string, 电子邮箱",
-  "idCard": {
-    "number": "string, 身份证号码",
-    "name": "string, 实名"
-  },
-  "bankCard": {
-	  "number": "string, 卡号",
-	  "bank": "string, 银行名称",
-	  "branch": "string, 支行名",
-	  "province": "string, 省份",
-	  "city": "string, 城市",
-  }
-}
-```
-
 
 # 4. 异常
 
