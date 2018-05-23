@@ -324,7 +324,7 @@ code | message
 		"endTime": "结束时间"
 	},
 	"index": {
-		"name": "这里只会根据谷米财富平台用户编号查询，固定为platformUserNo",
+		"name": "这里只会根据谷米财富平台用户编号查询，固定为username",
 		"salt": "string, 用于鉴权校验,该账户的8位长度密钥",
 		"vals": "platformUserNo数组，查询匹配的用户信息"
 	}
