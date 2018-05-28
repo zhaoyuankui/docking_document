@@ -29,7 +29,7 @@
 ### 调用方式
 
 ```shell
-curl -x POST -d '<data>' '(http|https)://<url>'
+curl -X POST -d '<data>' '(http|https)://<url>'
 ```
 
 ## 2.2 数据格式
